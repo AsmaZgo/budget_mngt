@@ -1,0 +1,62 @@
+
+<div class="container-fluid">
+	<div class="row-fluid">
+
+		<div class="panel-body well"
+			style="margin-top: 100px; margin-bottom: 100px; opacity: 0.8;">
+
+
+			<div class="panel-body">
+				<h1 class="text-info">Categories</h1>
+				<h4>Search:</h4>
+
+				<div class="col-md-2">
+					<form class="form-group">
+						<div class="input-icon right">
+							<i class="icon-magnifier"></i><input type="text" ng-model="label"
+								placeholder="label ..." class="form-control" />
+						</div>
+					</form>
+				</div>
+
+				<table class="responsive table table-bordered" id="checkAll">
+
+					<thead>
+						<tr>
+							<th>id</th>
+							<th>label</th>
+
+							<th>desc.</th>
+							<th>type</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<!-- normalement ca n'affiche que lorque la table est diffénrente de nul  -->
+					<tbody ng-show="users.length" ng-repeat="materiel in users">
+
+						<tr>
+
+							<td>{{materiel.ref}}</td>
+
+							<td>{{materiel.label}}</td>
+							<td>{{materiel.desc}}</td>
+							<td>{{materiel.type}}</td>
+
+							<td><img src="assets/images/iconDelete.gif"
+								ng-click="remove(materiel._id)" />&nbsp;&nbsp; <!--<img src="assets/images/55.png" ng-click="edit(materiel._id)"/>-->
+								<a href="#modif/{{materiel._id}}"><img
+									src="assets/images/55.png" /></a>&nbsp;&nbsp;&nbsp;&nbsp; <a
+								href="#detail/{{materiel._id}}">show détails </a></td>
+						</tr>
+
+
+					</tbody>
+				</table>
+
+			</div>
+
+
+		</div>
+	</div>
+</div>
+
